@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NavBar</title>
+    <link href="/style.css" rel="stylesheet" />
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" th:fragment="navigation">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="custom-navbar">
+            <div>
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" th:href="@{/index}">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/form}">Post form</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+<!--                    <li class="nav-item">-->
+<!--                        <form method="post" th:if="${@userContextService.isLogged}" th:action="@{'/delete-post/'+${post.id}}">-->
+<!--                            <input name="search" type="text" class="form-control" id="search">-->
+<!--                        </form>-->
+<!--                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" th:if="${!@userContextService.isLogged}" th:href="@{/login-form}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:if="${!@userContextService.isLogged}"
+                           th:href="@{/signup}">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:if="${@userContextService.isLogged}" th:href="@{/logout}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <p class="nav-link disabled" th:if="${@userContextService.isLogged}"
+                           th:text="${@userContextService.getLoggedAs}"></p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<!--end navbar-->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+</body>
+</html>

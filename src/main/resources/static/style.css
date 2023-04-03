@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#custom-navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.post-item{
+    width: 600px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+
+.comment-wrapper{
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.jumbotron{
+    background-color: #E8E8E8;
+    padding-top: 60px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.registration-form{
+    padding-top: 60px;
+    padding-right: 2px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+}
+
+.card{
+    margin-top: 80px;
+}
+
+
